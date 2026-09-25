@@ -1,0 +1,911 @@
+/* ==========================================
+   GENERAL
+   ========================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f6f3ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+header {
+    background: linear-gradient(
+        135deg,
+        #6c4ab6,
+        #9475d6
+    );
+
+    color: white;
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    box-shadow:
+        0 4px 12px rgba(80, 50, 130, 0.15);
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+
+/* ==========================================
+   MAIN CONTAINER
+   ========================================== */
+
+main {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 30px auto;
+}
+
+
+/* ==========================================
+   DASHBOARD
+   ========================================== */
+
+.dashboard {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+.card {
+    background: white;
+
+    padding: 22px;
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 15px rgba(80, 50, 130, 0.08);
+
+    border-top: 4px solid #6c4ab6;
+}
+
+.card h3 {
+    font-size: 15px;
+
+    color: #625a6e;
+
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 25px;
+
+    font-weight: bold;
+}
+
+
+/* Card-specific colours */
+
+.income-card {
+    border-top-color: #159447;
+}
+
+.income-card p {
+    color: #159447;
+}
+
+
+.expense-card {
+    border-top-color: #e05252;
+}
+
+.expense-card p {
+    color: #e05252;
+}
+
+
+.savings-card {
+    border-top-color: #2196a6;
+}
+
+.savings-card p {
+    color: #2196a6;
+}
+
+
+.balance-card {
+    border-top-color: #6c4ab6;
+}
+
+.balance-card p {
+    color: #6c4ab6;
+}
+
+
+/* ==========================================
+   COMMON SECTIONS
+   ========================================== */
+
+section {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 14px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 4px 15px rgba(80, 50, 130, 0.07);
+}
+
+section h2 {
+    color: #4d347e;
+
+    margin-bottom: 20px;
+
+    font-size: 22px;
+}
+
+
+/* ==========================================
+   TRANSACTION FORM
+   ========================================== */
+
+#budget-form {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px 20px;
+}
+
+#budget-form label {
+    font-weight: bold;
+
+    font-size: 14px;
+
+    color: #625a6e;
+}
+
+#budget-form input,
+#budget-form select {
+    width: 100%;
+
+    padding: 11px;
+
+    border: 1px solid #d8d0e5;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    background: #faf9fd;
+}
+
+#budget-form input:focus,
+#budget-form select:focus {
+    outline: none;
+
+    border-color: #6c4ab6;
+
+    box-shadow:
+        0 0 0 2px rgba(
+            108,
+            74,
+            182,
+            0.1
+        );
+}
+
+
+/* Submit button */
+
+#budget-form button {
+    grid-column: 1 / -1;
+
+    background: #6c4ab6;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#budget-form button:hover {
+    background: #58399e;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px rgba(
+            108,
+            74,
+            182,
+            0.2
+        );
+}
+
+
+/* ==========================================
+   TRANSACTION HISTORY
+   ========================================== */
+
+.transaction-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+
+    background: #faf9fd;
+
+    border-left: 4px solid #6c4ab6;
+}
+
+.transaction-info h4 {
+    color: #40394b;
+
+    margin-bottom: 3px;
+}
+
+.transaction-info p {
+    color: #857c91;
+
+    font-size: 13px;
+}
+
+
+/* Income / expense amount */
+
+.transaction-item strong {
+    font-size: 15px;
+
+    margin-right: 8px;
+}
+
+.transaction-item strong.income {
+    color: #159447;
+}
+
+.transaction-item strong.expense {
+    color: #e05252;
+}
+
+
+/* Edit button */
+
+.edit-btn {
+    background: #eee9f7;
+
+    color: #6c4ab6;
+
+    border: none;
+
+    padding: 6px 10px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    margin-right: 5px;
+}
+
+.edit-btn:hover {
+    background: #e0d5f3;
+}
+
+
+/* Delete button */
+
+.delete-btn {
+    background: #ffe8e8;
+
+    color: #d43d3d;
+
+    border: none;
+
+    padding: 6px 10px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+}
+
+.delete-btn:hover {
+    background: #ffd6d6;
+}
+
+
+/* ==========================================
+   SMART BUDGET INSIGHTS
+   ========================================== */
+
+.insights {
+    background: #fbf9ff;
+
+    border: 1px solid #e7def5;
+}
+
+.insights h2 {
+    margin-bottom: 18px;
+}
+
+
+.health-score {
+    text-align: center;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    margin-bottom: 15px;
+}
+
+.health-score h3 {
+    color: #625a6e;
+
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+#health-score {
+    font-size: 32px;
+
+    font-weight: bold;
+
+    color: #6c4ab6;
+
+    margin-bottom: 4px;
+}
+
+#health-message {
+    color: #716879;
+
+    font-size: 14px;
+}
+
+
+.insight-details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+.insight-details p {
+    background: white;
+
+    padding: 14px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    color: #625a6e;
+
+    text-align: center;
+}
+
+
+/* ==========================================
+   BUDGET REPORTS
+   ========================================== */
+
+.reports {
+    background: #ffffff;
+}
+
+.report-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+.report-card {
+    background: #f8f5ff;
+
+    border: 1px solid #e6ddf5;
+
+    border-radius: 12px;
+
+    padding: 20px;
+}
+
+.report-card h3 {
+    color: #4d347e;
+
+    margin-bottom: 12px;
+}
+
+.report-card p {
+    color: #625a6e;
+
+    margin-bottom: 5px;
+}
+
+.report-card strong {
+    color: #4d347e;
+}
+
+
+/* ==========================================
+   GRAPH CONTAINER
+   ========================================== */
+
+.chart-container {
+    padding: 25px;
+
+    background: #fcfbff;
+
+    border-radius: 14px;
+
+    border: 1px solid #eee9f7;
+}
+
+.chart-container h3 {
+    color: #4d347e;
+
+    margin-bottom: 3px;
+}
+
+.chart-description {
+    color: #80788d;
+
+    font-size: 14px;
+
+    margin-bottom: 22px;
+}
+
+
+/* ==========================================
+   GRAPH CONTROLS
+   ========================================== */
+
+.report-controls {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+.report-controls label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 13px;
+
+    color: #625a6e;
+
+    font-weight: bold;
+}
+
+.control-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+/* Weekly / Monthly buttons */
+
+.report-btn,
+.metric-btn {
+    margin: 0;
+
+    padding: 9px 14px;
+
+    border-radius: 8px;
+
+    background: #eee9f7;
+
+    color: #625a6e;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    border: none;
+
+    cursor: pointer;
+
+    box-shadow: none;
+
+    transition: 0.2s;
+}
+
+.report-btn:hover,
+.metric-btn:hover {
+    background: #e3daf4;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+.report-btn.active,
+.metric-btn.active {
+    background: #6c4ab6;
+
+    color: white;
+}
+
+
+/* ==========================================
+   GRAPH HEADING
+   ========================================== */
+
+.graph-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+
+    padding: 12px 15px;
+
+    background: #f3edff;
+
+    border-radius: 9px;
+}
+
+#graph-title {
+    color: #4d347e;
+}
+
+#graph-total {
+    color: #625a6e;
+
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   GRAPH
+   ========================================== */
+
+.chart {
+    height: 320px;
+
+    display: flex;
+
+    gap: 10px;
+
+    padding: 15px 5px 0;
+
+    border-bottom: 2px solid #ddd6ee;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+}
+
+
+/* Y axis */
+
+.y-axis {
+    width: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding-bottom: 28px;
+
+    color: #92899e;
+
+    font-size: 10px;
+
+    text-align: right;
+}
+
+
+/* Graph area */
+
+.graph-area {
+    flex: 1;
+
+    min-width: 500px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-around;
+
+    gap: 8px;
+
+    height: 100%;
+
+    padding: 0 10px;
+}
+
+
+/* ==========================================
+   GRAPH BARS
+   ========================================== */
+
+.graph-bar-group {
+    height: 100%;
+
+    flex: 1;
+
+    max-width: 70px;
+
+    min-width: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    position: relative;
+}
+
+.graph-bar {
+    width: 55%;
+
+    min-width: 12px;
+
+    max-width: 38px;
+
+    border-radius:
+        7px 7px 0 0;
+
+    position: relative;
+
+    transition:
+        height 0.4s ease;
+}
+
+.graph-bar:hover {
+    opacity: 0.8;
+}
+
+
+/* Value above bar */
+
+.graph-bar-value {
+    position: absolute;
+
+    bottom: calc(100% + 5px);
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    color: #514b5d;
+}
+
+
+/* Day label */
+
+.graph-label {
+    margin-top: 8px;
+
+    font-size: 10px;
+
+    color: #80788d;
+
+    white-space: nowrap;
+}
+
+
+/* Graph colours */
+
+.graph-income {
+    background: #45b97c;
+}
+
+.graph-expense {
+    background: #e05252;
+}
+
+.graph-savings {
+    background: #42aeba;
+}
+
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 800px) {
+
+    .dashboard {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .insight-details {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    header p {
+        font-size: 13px;
+    }
+
+
+    main {
+        width: 94%;
+
+        margin-top: 20px;
+    }
+
+
+    section {
+        padding: 18px;
+    }
+
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+
+    .card {
+        padding: 18px;
+    }
+
+
+    #budget-form {
+        grid-template-columns: 1fr;
+    }
+
+
+    #budget-form button {
+        grid-column: 1;
+    }
+
+
+    .transaction-item {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .transaction-item > div:last-child {
+        width: 100%;
+    }
+
+
+    .report-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .report-controls {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .graph-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 5px;
+    }
+
+
+    .chart {
+        height: 280px;
+    }
+
+
+    .graph-area {
+        min-width: 650px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .control-buttons {
+        width: 100%;
+    }
+
+    .report-btn,
+    .metric-btn {
+        flex: 1;
+
+        padding: 8px 7px;
+
+        font-size: 11px;
+    }
+
+    .card p {
+        font-size: 22px;
+    }
+
+}
