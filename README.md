@@ -15,7 +15,7 @@ The application helps users record their income and expenses, track their saving
 - Budget Health Score based on spending percentage
 - Identify the biggest expense category
 - Weekly and monthly financial reports
-- Interactive income, expense, and savings graphs
+- Interactive graphs for income, expenses, and savings
 - Responsive design for desktop and mobile devices
 
 ## 🧠 Smart Budget Insights
@@ -54,6 +54,7 @@ Users can switch between weekly and monthly views and select the financial metri
 Transaction data is stored using the browser's **Local Storage**.
 
 This means:
+
 - Data remains available after refreshing the page.
 - No backend or database is required.
 - Data is stored separately on each browser/device.
@@ -64,16 +65,3 @@ This means:
 
 ```bash
 git clone https://github.com/shravanikatta24-collab/personal-budget-management.git
-## 📸 Screenshots
-
-### Dashboard
-![Dashboard](Screenshot%202026-09-26%20123720.png)
-
-### Transaction History
-![Transaction History](Screenshot%202026-09-26%20123751.png)
-
-### Smart Budget Insights
-![Smart Budget Insights](Screenshot%202026-09-26%20123900.png)
-
-### Budget Reports & Graphs
-![Budget Reports](Screenshot%202026-09-26%20123911.png)
