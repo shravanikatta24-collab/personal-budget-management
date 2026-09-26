@@ -64,3 +64,16 @@ This means:
 
 ```bash
 git clone https://github.com/shravanikatta24-collab/personal-budget-management.git
+## 📸 Screenshots
+
+### Dashboard
+![Dashboard](Screenshot%202026-09-26%20123720.png)
+
+### Transaction History
+![Transaction History](Screenshot%202026-09-26%20123751.png)
+
+### Smart Budget Insights
+![Smart Budget Insights](Screenshot%202026-09-26%20123900.png)
+
+### Budget Reports & Graphs
+![Budget Reports](Screenshot%202026-09-26%20123911.png)
